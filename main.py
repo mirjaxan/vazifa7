@@ -3,8 +3,10 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.filters import Command
 
-API_TOKEN = "8249854204:AAHBtu8M22evD10YxzPdONyecesP0atlF74"
 
+env = Env()
+env.read_env()
+API_TOKEN = env.str("TOKEN")
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 user_data = {}
